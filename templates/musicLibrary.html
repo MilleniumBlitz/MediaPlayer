@@ -1,0 +1,21 @@
+<div layout="row" layout-xs="column" layout-sm="column" layout-wrap>
+    <md-card ng-repeat="music in musics" flex-lg="30" flex-xl="20" flex-md="30" flex-sm="50" class="music">
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">{{music.title}}</span>
+                <span class="md-subhead">{{music.artists.join(', ')}}</span>
+            </md-card-title-text>
+            <md-card-title-media>
+                <div class="md-media-lg card-media"><img src="assets/img/pochettes/tristam.jpg"></div>
+
+            </md-card-title-media>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="end center">
+            <md-button>Action 1</md-button>
+            <md-button>Action 2</md-button>
+        </md-card-actions>
+    </md-card>
+</div>
+
+
+
