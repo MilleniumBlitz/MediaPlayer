@@ -1,5 +1,14 @@
+<md-toolbar id="toolbar" layout="row" layout-xs="column" layout-sm="column" layout-md="column">
+    <div flex-gt-lg="50" flex-gt-md="50" layout="column" layout-align="center" layout-align-xs="center center" layout-align-md="center center" layout-align-sm="center center" layout-padding>
+        Media Player <audio controls><source src="assets/mp3/Au5%20-%20Crossroad%20(feat.%20Danyka%20Nadeau).mp3" type="audio/mpeg"></audio>
+    </div>
+    <div flex-gt-lg="50" flex-gt-md="50" layout="column" layout-align="center" layout-align-xs="center center" layout-align-md="center center" layout-align-sm="center center">
+        <span>{{musiqueEnCours}}</span>
+    </div>
+</md-toolbar>
+
 <div layout="row" layout-xs="column" layout-sm="column" layout-wrap>
-    <md-card ng-repeat="music in musics" flex-lg="30" flex-xl="20" flex-md="30" flex-sm="50" class="music">
+    <md-card ng-repeat="music in musics" flex-lg="30" flex-xl="20" flex-md="30" flex-sm="50" class="music" ng-click="changeMusic($event, music.number)">
         <md-card-title>
             <md-card-title-text>
                 <span class="md-headline">{{music.title}}</span>
@@ -7,13 +16,19 @@
             </md-card-title-text>
             <md-card-title-media>
                 <div class="md-media-lg card-media"><img src="assets/img/pochettes/tristam.jpg"></div>
-
             </md-card-title-media>
         </md-card-title>
-        <md-card-actions layout="row" layout-align="end center">
-            <md-button>Action 1</md-button>
-            <md-button>Action 2</md-button>
+
+
+        <md-card-actions layout="row" layout-align="none center">
+
+            {{music.duration}}
+            <span flex></span>
+            <md-button class="md-raised md-primary" ng-click="showAlert($event, music.title, music.artists.join(', '))">Détails</md-button>
+
         </md-card-actions>
+
+
     </md-card>
 </div>
 

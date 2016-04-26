@@ -1,15 +1,13 @@
-var app = angular.module( 'mediaPlayer', [ 'ngMaterial', 'ngRoute', 'ngAnimate' ]);
-
-app.config(function($mdThemingProvider) {
-        $mdThemingProvider.theme('default')
-            .dark();
-    });
+var app = angular.module('mediaPlayer', ['ngMaterial', 'ngRoute', 'ngAnimate']);
 
 app.config(['$routeProvider',
-    function($routeProvider) {
-        $routeProvider.
-        when('/', {
+    function ($routeProvider) {
+        $routeProvider.when('/', {
             templateUrl: 'templates/musicLibrary.html',
             controller: 'musicController'
         })
     }]);
+app.config(function($mdThemingProvider) {
+        $mdThemingProvider.theme('default')
+            .dark();
+    });

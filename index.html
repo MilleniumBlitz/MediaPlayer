@@ -10,19 +10,9 @@
 
 </head>
 
-<body ng-app="mediaPlayer" ng-cloack>
+<body ng-app="mediaPlayer">
 
-    <md-toolbar id="toolbar" layout="row" layout-xs="column" layout-sm="column" layout-md="column">
-        <div flex-gt-lg="50" flex-gt-md="50" layout="column" layout-align="center" layout-align-xs="center center" layout-align-md="center center" layout-align-sm="center center" layout-padding>
-            Media Player
-        </div>
-        <div flex-gt-lg="50" flex-gt-md="50" layout="column" layout-align="center" layout-align-xs="center center" layout-align-md="center center" layout-align-sm="center center">
-            Musique en cours
-        </div>
-    </md-toolbar>
-    <div class="page {{ pageClass }}" ng-view></div>
-
-
+<div class="{{ pageClass }}" ng-view></div>
 
     <script src="node_modules/angular/angular.js"></script>
     <script src="node_modules/angular-route/angular-route.js"></script>
