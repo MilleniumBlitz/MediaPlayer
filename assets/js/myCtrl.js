@@ -1,7 +1,6 @@
-// CONTROLLERS ============================================
-// home page controller
-app.controller('musicController', function($scope, $mdDialog) {
-    $scope.musiqueEnCours = "Aucune musique en cours";
+app.controller('globalController', function($scope, $mdDialog) {
+    $scope.mediaEnCours = "Aucune musique en cours";
+    $scope.typeMedia = "musique";
     $scope.pageClass = 'page';
     $scope.musics = [
         {
@@ -83,6 +82,7 @@ app.controller('musicController', function($scope, $mdDialog) {
         }
 
     ];
+    
     $scope.showAlert = function(ev, titre_musique, artistes) {
         $mdDialog.show(
             $mdDialog.alert()
@@ -96,12 +96,9 @@ app.controller('musicController', function($scope, $mdDialog) {
         );
     };
     $scope.changeMusic = function(ev, musicNumber) {
-        $scope.musiqueEnCours = $scope.getMusic(musicNumber).artists.join(', ') + " - " + $scope.getMusic(musicNumber).title;
+        $scope.mediaEnCours = $scope.getMusic(musicNumber).artists.join(', ') + " - " + $scope.getMusic(musicNumber).title;
     };
     $scope.getMusic = function(musicNumber) {
         return $scope.musics[musicNumber];
     };
 });
-
-app.controller('videoController', function($scope) {
-    $scope.pageClass = 'page';});

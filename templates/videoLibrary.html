@@ -1,0 +1,81 @@
+<md-content layout="column">
+    <md-content layout="row" layout-align="end none">
+        <md-button class="md-icon-button md-primary" aria-label="Settings">
+            <md-icon> reorder</md-icon>
+        </md-button>
+    </md-content>
+    <md-content layout="row">
+
+        <md-sidenav layout="column" class="sidenav1" md-is-locked-open='true'>
+            <md-list flex>
+                <md-list-item class="md-3-line">
+                    <div class="md-list-item-text" layout="column">
+                        <h4>Test</h4>
+                    </div>
+                </md-list-item>
+                <md-list-item class="md-3-line">
+                    <div class="md-list-item-text" layout="column">
+                        <h4>Test</h4>
+                    </div>
+                </md-list-item>
+                <md-list-item class="md-3-line">
+                    <div class="md-list-item-text" layout="column">
+                        <h4>Test</h4>
+                    </div>
+                </md-list-item>
+            </md-list>
+        </md-sidenav>
+
+        <md-content layout="column">
+            <!--Musique-->
+            <div layout="row" layout-xs="column" layout-sm="column" layout-wrap>
+                <md-card ng-repeat="music in musics" flex-lg="30" flex-xl="20" flex-md="30" flex-sm="50" class="music"
+                         ng-click="changeMusic($event, music.number)">
+
+                    <!--Haut de la card-->
+                    <md-card-title>
+
+                        <!--Nom et artistes-->
+                        <md-card-title-text>
+                            <span class="md-headline">{{music.title}}</span>
+                            <span class="md-subhead">{{music.artists.join(', ')}}</span>
+                        </md-card-title-text>
+
+                        <!--Pochette-->
+                        <md-card-title-media>
+                            <div class="md-media-lg card-media"><img src="assets/img/pochettes/tristam.jpg"></div>
+                        </md-card-title-media>
+
+                    </md-card-title>
+
+                    <!--Bas de la card-->
+                    <md-card-actions layout="row" layout-align="none center">
+
+                        {{music.duration}}
+                        <span flex></span>
+                        <md-button class="md-raised md-primary"
+                                   ng-click="showAlert($event, music.title, music.artists.join(', '))">Détails
+                        </md-button>
+
+                    </md-card-actions>
+
+
+                </md-card>
+            </div>
+        </md-content>
+    </md-content>
+</md-content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

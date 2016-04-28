@@ -10,18 +10,31 @@
 
 </head>
 
-<body ng-app="mediaPlayer">
+<body ng-app="mediaPlayer" ng-controller="globalController">
 
-<div class="{{ pageClass }}" ng-view></div>
 
-    <script src="node_modules/angular/angular.js"></script>
-    <script src="node_modules/angular-route/angular-route.js"></script>
-    <script src="node_modules/angular-aria/angular-aria.js"></script>
-    <script src="node_modules/angular-animate/angular-animate.js"></script>
-    <script src="node_modules/angular-material/angular-material.js"></script>
-    <script src="node_modules/angular-material/angular-material.js"></script>
-    <script src="assets/js/myApp.js"></script>
-    <script src="assets/js/myCtrl.js"></script>
+
+<md-toolbar class="md-hue-2" layout="row" layout-xs="column" layout-sm="column" layout-md="column" layout-padding>
+    <div flex-gt-lg="50" flex-gt-md="50" layout="column" layout-align="center" layout-align-xs="center center"
+         layout-align-md="center center" layout-align-sm="center center" layout-padding>
+        Media Player
+    </div>
+    <div flex-gt-lg="50" flex-gt-md="50" layout="column" layout-align="center" layout-align-xs="center center"
+         layout-align-md="center center" layout-align-sm="center center">
+        <span>{{mediaEnCours}}</span>
+    </div>
+</md-toolbar>
+
+<div class="{{ pageClass }}" layout="column" ng-view ng-cloak></div>
+
+<script src="node_modules/angular/angular.js"></script>
+<script src="node_modules/angular-route/angular-route.js"></script>
+<script src="node_modules/angular-aria/angular-aria.js"></script>
+<script src="node_modules/angular-animate/angular-animate.js"></script>
+<script src="node_modules/angular-material/angular-material.js"></script>
+<script src="node_modules/angular-material/angular-material.js"></script>
+<script src="assets/js/myApp.js"></script>
+<script src="assets/js/myCtrl.js"></script>
 
 </body>
 </html>
