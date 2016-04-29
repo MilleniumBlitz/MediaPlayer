@@ -1,84 +1,34 @@
 app.controller('globalController', function($scope, $mdDialog) {
-    $scope.mediaEnCours = "Aucune musique en cours";
+    $scope.musiqueEnCoursID = null;
+    $scope.checked = false;
+    $scope.musiqueEnCoursTitre = "Aucune musique en cours";
+    $scope.musiqueEnCoursMP3 = "Au5 - Crossroad (feat. Danyka Nadeau)";
     $scope.typeMedia = "musique";
     $scope.pageClass = 'page';
     $scope.musics = [
         {
             number: 0,
-            title: 'Talent Goes By',
-            artists: ['Tristam'],
+            title: 'Far Away',
+            artists: ['Tristam','Braken'],
             duration: '6min57',
-            image: '1'
+            image: 'faraway.jpg',
+            chemin: ''
         },
         {
             number: 1,
-            title: 'Far Away',
-            artists: ['Tristam','Braken'],
+            title: 'Final Boss',
+            artists: ['Nitro Fun'],
             duration: '6min57',
-            image: '2'
+            image: 'finalboss.jpg',
+            chemin: ''
         },
         {
             number: 2,
-            title: 'Final Boss',
-            artists: ['Nitro Fun'],
-            duration: '6min57',
-            image: '3'
-        },
-        {
-            number: 3,
             title: 'Emoji',
             artists: ['Pegboard Nerds'],
             duration: '6min57',
-            image: '4'
-        },
-        {
-            number: 4,
-            title: 'Talent Goes By',
-            artists: ['Tristam'],
-            duration: '6min57',
-            image: '1'
-        },
-        {
-            number: 5,
-            title: 'Far Away',
-            artists: ['Tristam','Braken'],
-            duration: '6min57',
-            image: '2'
-        },
-        {
-            number: 6,
-            title: 'Final Boss',
-            artists: ['Nitro Fun'],
-            duration: '6min57',
-            image: '3'
-        },
-        {
-            number: 7,
-            title: 'Emoji',
-            artists: ['Pegboard Nerds'],
-            duration: '6min57',
-            image: '4'
-        },
-        {
-            number: 8,
-            title: 'Talent Goes By',
-            artists: ['Tristam'],
-            duration: '6min57',
-            image: '1'
-        },
-        {
-            number: 9,
-            title: 'Far Away',
-            artists: ['Tristam','Braken'],
-            duration: '6min57',
-            image: '2'
-        },
-        {
-            number: 10,
-            title: 'Final Boss',
-            artists: ['Nitro Fun'],
-            duration: '6min57',
-            image: '3'
+            image: 'emoji.jpg',
+            chemin: ''
         }
 
     ];
@@ -96,7 +46,10 @@ app.controller('globalController', function($scope, $mdDialog) {
         );
     };
     $scope.changeMusic = function(ev, musicNumber) {
-        $scope.mediaEnCours = $scope.getMusic(musicNumber).artists.join(', ') + " - " + $scope.getMusic(musicNumber).title;
+        $scope.musiqueEnCoursTitre = $scope.getMusic(musicNumber).artists.join(', ') + " - " + $scope.getMusic(musicNumber).title;
+        $scope.musiqueEnCoursID = musicNumber;
+        $scope.musiqueEnCoursMP3 = $scope.getMusic(musicNumber).chemin;
+        $scope.checked = true;
     };
     $scope.getMusic = function(musicNumber) {
         return $scope.musics[musicNumber];

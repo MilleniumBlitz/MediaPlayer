@@ -12,3 +12,10 @@ app.config(['$routeProvider',
             templateUrl: 'templates/videoLibrary.html'
         })
     }]);
+
+app.config(function ($mdThemingProvider) {
+
+    $mdThemingProvider.theme('default')
+        .primaryPalette('blue-grey')
+        .backgroundPalette('blue-grey')
+});

@@ -12,20 +12,22 @@
 
 <body ng-app="mediaPlayer" ng-controller="globalController">
 
-
-
-<md-toolbar class="md-hue-2" layout="row" layout-xs="column" layout-sm="column" layout-md="column" layout-padding>
-    <div flex-gt-lg="50" flex-gt-md="50" layout="column" layout-align="center" layout-align-xs="center center"
-         layout-align-md="center center" layout-align-sm="center center" layout-padding>
-        Media Player
+<md-toolbar  layout="column" layout-padding>
+    <div layout="row" layout-xs="column" layout-sm="column" layout-md="column">
+        <div flex-gt-lg="50" flex-gt-md="50" layout="column" layout-align="center" layout-align-xs="center center"
+             layout-align-md="center center" layout-align-sm="center center" layout-padding>
+            Media Player
+        </div>
+        <div flex-gt-lg="50" flex-gt-md="50" layout="column" layout-align="center" layout-align-xs="center center"
+             layout-align-md="center center" layout-align-sm="center center">
+            <span>{{musiqueEnCoursTitre}}</span>
+        </div>
     </div>
-    <div flex-gt-lg="50" flex-gt-md="50" layout="column" layout-align="center" layout-align-xs="center center"
-         layout-align-md="center center" layout-align-sm="center center">
-        <span>{{mediaEnCours}}</span>
-    </div>
+    <!--<div layout="row">-->
+    <!--</div>-->
 </md-toolbar>
 
-<div class="{{ pageClass }}" layout="column" ng-view ng-cloak></div>
+<md-content class="{{ pageClass }}" ng-view ng-cloak></md-content>
 
 <script src="node_modules/angular/angular.js"></script>
 <script src="node_modules/angular-route/angular-route.js"></script>
